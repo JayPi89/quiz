@@ -14,15 +14,13 @@ yarn-error.log
 
 # IDEs and editors
 .idea/
-.angular
-.vscode
 .project
 .classpath
 .c9/
 *.launch
 .settings/
 *.sublime-workspace
-.m2
+.m2/*
 
 # Visual Studio Code
 .vscode/*
@@ -33,7 +31,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
+.angular/*
 .sass-cache/
 /connect.lock
 /coverage
