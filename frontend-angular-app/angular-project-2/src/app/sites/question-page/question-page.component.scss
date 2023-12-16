@@ -1,0 +1,101 @@
+.wrapper {
+    height: calc(100vh - 64px);
+    background-color: rgb(110, 110, 110);
+}
+.content {
+    padding: 20px;
+    background-color: rgb(110, 110, 110);
+}
+
+.stats {
+    color: rgb(200, 200, 200);
+    font-size: 24px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    mat-icon {
+        font-size: 28px;
+        vertical-align: middle;
+        margin-bottom: 8px;
+        margin-left: 40px;
+        margin-right: 5px;
+        &.cold {
+            color: darkblue;
+        }
+        &.mild {
+            color: rgb(139, 95, 0);
+        }
+        &.warm {
+            color: darkorange;
+        }
+        &.hot {
+            color: darkred;
+        }
+    } 
+}
+
+.clickable {
+    border: 1px solid transparent;
+    margin-left: 40px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+}.clickable:hover {
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.card {
+    margin: auto;
+    width: 1000px;
+    
+    .question {
+        margin: auto;
+        width: 930px;
+        font-size: 32px;
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none;
+        height: 230px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
+        background: rgb(155, 155, 155);
+        .question-row {
+            height: 190px;
+            line-height: 190px;
+            vertical-align: middle;
+        }
+        .sub-row {
+            width: 100%;
+            height: 30px;
+            
+            display: flex; 
+            justify-content: flex-end; 
+            align-items: flex-end;
+        }
+        .example-margin {
+            margin-right: 5px;
+        }
+    }
+    .answer {
+        font-size: 24px;
+        width: 430px;
+        height: 85px;
+        line-height: 85px;
+        background: rgb(155, 155, 155);
+        button {
+            border-radius: 0px;
+        }
+    }
+    .answer:hover .mat-button-disabled {
+        background: rgb(160, 160, 160);
+    }
+    .success {
+        background: darkgreen;
+    }
+    .wrong {
+        background: darkred;
+    }
+
+}

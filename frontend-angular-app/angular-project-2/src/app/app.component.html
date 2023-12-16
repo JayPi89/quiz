@@ -1,0 +1,6 @@
+<body class="bg-dark">
+  <div>
+    <app-toolbar (isExpandedEvent)="changeValue($event)"></app-toolbar>
+  </div>
+  <app-side-panel [isExpanded]="isExpanded"></app-side-panel>
+</body>

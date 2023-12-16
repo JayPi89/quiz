@@ -1,0 +1,79 @@
+<div class="wrapper">
+    <div class="content">
+        <div class="stats">
+            <div>               
+                <mat-icon id="streakicon" class="streak">local_fire_department</mat-icon> {{counter.correctAnswersInARow}} ({{counter.correctAnswersInARowRecord}})
+                <mat-icon>autorenew</mat-icon> {{counter.questionsCounter}}/{{mySettings.rounds}}(<mat-icon class="counter" style="margin-left: 0px;">done</mat-icon>{{counter.questionsCorrectCounter}})
+            </div>
+            <div>
+                <app-quiz-menu></app-quiz-menu>
+            </div>
+        </div>
+        <!-- start quiz  comp -->
+        <div class="card" *ngIf="roundPaused || !roundStarted">
+            <app-quiz-game-settings></app-quiz-game-settings>
+        </div>
+        <!-- country question comp -->
+        <div class="card" *ngIf="questionObject.type === questionmodes.capital && !roundPaused && roundStarted">
+            <div class="question">
+                <div class="question-row">
+                    Wie heißt die Hauptstadt von '{{questionObject.question}}'?
+                </div>
+                <div class="sub-row">
+                    <mat-progress-spinner
+                        class="example-margin"
+                        mode="determinate"
+                        [value]="progressbarValue"
+                        [diameter]="30"
+                        color="accent">
+                    </mat-progress-spinner>
+                    <div style="position:relative; top: -5px; left: -27px; font-size: 12px;">{{ secondsleft | number : '2.0' }}</div>
+                </div>
+            </div>
+            <mat-grid-list cols="2" rowHeight="4:1">
+                <mat-grid-tile>
+                    <button mat-flat-button id="0" (click)="isAnswerRight(0)" class="answer" [disabled]="isToogleDisabled()">{{questionObject.answer[0]}}</button>
+                </mat-grid-tile>
+                <mat-grid-tile>                    
+                    <button mat-flat-button id="1" (click)="isAnswerRight(1)" class="answer" [disabled]="isToogleDisabled()">{{questionObject.answer[1]}}</button>
+                </mat-grid-tile>
+                <mat-grid-tile>                   
+                    <button mat-flat-button id="2" (click)="isAnswerRight(2)" class="answer" [disabled]="isToogleDisabled()">{{questionObject.answer[2]}}</button>
+                </mat-grid-tile>
+                <mat-grid-tile>                    
+                    <button mat-flat-button id="3" (click)="isAnswerRight(3)" class="answer" [disabled]="isToogleDisabled()">{{questionObject.answer[3]}}</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+         <!-- flag question comp -->
+        <div class="card" *ngIf="questionObject.type === questionmodes.flag && !roundPaused && roundStarted">
+            <div class="question">
+                    <div class="question-row"><img src={{questionObject.question}} width="300px" height="180px" style="margin-top: 5px;"/></div>
+                    <div class="sub-row">
+                        <mat-progress-spinner
+                            class="example-margin"
+                            mode="determinate"
+                            [value]="progressbarValue"
+                            [diameter]="30"
+                            color="accent">
+                        </mat-progress-spinner>
+                        <div style="position:relative; top: -5px; left: -27px; font-size: 12px;">{{ secondsleft | number : '2.0' }}</div>
+                    </div>
+            </div>
+            <mat-grid-list cols="2" rowHeight="4:1">
+                <mat-grid-tile>
+                    <button mat-flat-button id="0" (click)="isAnswerRight(0)" class="answer" [disabled]="isToogleDisabled()">{{questionObject.answer[0]}}</button>
+                </mat-grid-tile>
+                <mat-grid-tile>                    
+                    <button mat-flat-button id="1" (click)="isAnswerRight(1)" class="answer" [disabled]="isToogleDisabled()">{{questionObject.answer[1]}}</button>
+                </mat-grid-tile>
+                <mat-grid-tile>                   
+                    <button mat-flat-button id="2" (click)="isAnswerRight(2)" class="answer" [disabled]="isToogleDisabled()">{{questionObject.answer[2]}}</button>
+                </mat-grid-tile>
+                <mat-grid-tile>                    
+                    <button mat-flat-button id="3" (click)="isAnswerRight(3)" class="answer" [disabled]="isToogleDisabled()">{{questionObject.answer[3]}}</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<mat-toolbar class="toolbar">
+    <!-- <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <img src="assets/logo.png" width="65px" height="32px"/>
+    <span style="margin-left: 15px;">Quizzls</span>
+    <span class="spacer"></span>
+    <mat-form-field *ngIf="!isLoggedIn" class="formfield">
+      <mat-label>username</mat-label>
+      <input matInput [(ngModel)]="name">
+    </mat-form-field>
+    <button *ngIf="!isLoggedIn" (click)="loginUser(name)" mat-flat-button>
+      Anmelden
+    </button>
+    <span *ngIf="isLoggedIn">
+      {{name}} 
+    </span>
+    <button *ngIf="isLoggedIn" mat-icon-button>
+      <mat-icon>person</mat-icon>
+    </button>
+  </mat-toolbar>

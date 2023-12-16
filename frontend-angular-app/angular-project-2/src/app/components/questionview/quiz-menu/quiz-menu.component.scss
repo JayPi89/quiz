@@ -1,0 +1,11 @@
+.setting {
+    margin-right: 25px;
+    font-size: 28px;
+    color: rgb(200, 200, 200);
+}
+
+.setting:hover {
+    cursor: pointer;
+    color: rgb(220, 220, 220);
+    transform: scale(1.4);
+}

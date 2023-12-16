@@ -1,0 +1,6 @@
+<mat-drawer-container class="mainpage" autosize>
+  <mat-drawer #drawer mode="side" opened="true" class="sidepanel">
+    <app-menu-navigation [isExpanded]="isExpanded"></app-menu-navigation>
+  </mat-drawer>
+  <router-outlet></router-outlet>
+</mat-drawer-container>

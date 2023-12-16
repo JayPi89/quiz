@@ -1,0 +1,66 @@
+<div class="game-setting">
+    <div class="header">
+        Einstellungen
+    </div>
+    <form [formGroup]="options" (ngSubmit)="submit()">
+        <div class="menu">
+            <div class="menu-group">
+                <div class="menu-title">Fragentypen</div>
+                <mat-selection-list [multiple]="true" [formControl]="questionModeControl">
+                    <mat-list-option *ngFor="let option of questionmodesFromEnum" [value]="option" style="color: rgb(200,200,200);">
+                      {{option}}
+                    </mat-list-option>
+                </mat-selection-list>
+
+                <!-- <div class="menu-title">Kontinente(disabled)</div>
+                <mat-selection-list [multiple]="true" [formControl]="continentsControl">
+                    <mat-list-option *ngFor="let option of continentsFromEnum" [value]="option">
+                      {{option}}
+                    </mat-list-option>
+                </mat-selection-list> -->
+            </div>
+            <div >         
+                <label class="menu-title">Spielmodus(disabled)</label>
+                <mat-radio-group
+                class="radio-group"
+                [formControl]="gameModeControl">
+                <mat-radio-button class="example-radio-button" [value]="gamemodes.training" disabled="true">Training</mat-radio-button>
+                <mat-radio-button class="example-radio-button" [value]="gamemodes.rank" disabled="true">Rangliste</mat-radio-button>
+                <mat-radio-button class="example-radio-button" [value]="gamemodes.team" disabled="true">Team</mat-radio-button>
+                </mat-radio-group>
+
+                <label class="menu-title">Schwierigkeit</label>
+                <mat-radio-group
+                class="radio-group"
+                [formControl]="gameLevelControl">
+                <mat-radio-button class="example-radio-button" [value]="1">Leicht</mat-radio-button>
+                <mat-radio-button class="example-radio-button" [value]="2">Normal</mat-radio-button>
+                <mat-radio-button class="example-radio-button" [value]="3">Schwer</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div >
+                <label class="menu-title">Trickantworten</label>
+                <mat-radio-group
+                class="radio-group"
+                [formControl]="answerInjectionControl">
+                <mat-radio-button class="example-radio-button" [value]="true">An</mat-radio-button>
+                <mat-radio-button class="example-radio-button" [value]="false">Aus</mat-radio-button>
+                </mat-radio-group>
+
+                <label class="menu-title">Spielrunden</label>
+                <mat-radio-group
+                class="radio-group"
+                [formControl]="roundsControl">
+                <mat-radio-button class="example-radio-button" [value]="5">5</mat-radio-button>
+                <mat-radio-button class="example-radio-button" [value]="25">25</mat-radio-button>
+                <mat-radio-button class="example-radio-button" [value]="50">50</mat-radio-button>
+                <mat-radio-button class="example-radio-button" [value]="999999"><mat-icon>all_inclusive</mat-icon></mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="play">
+            <button *ngIf="started" type="submit" mat-button>Neues Spiel</button>
+            <button *ngIf="!started" type="submit" mat-flat-button>Neues Spiel</button>
+        </div>
+    </form>
+</div>
