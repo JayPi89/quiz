@@ -4,9 +4,6 @@ import { gamemodes } from 'src/app/models/enums/gamemodes';
 import { questionmodes } from 'src/app/models/enums/questionmodes';
 import { GameSettings } from 'src/app/models/gamesettings';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class GamelevelService {
 
   settingsSubnject = new ReplaySubject<GameSettings>(1);

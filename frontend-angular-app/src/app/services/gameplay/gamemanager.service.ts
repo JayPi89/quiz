@@ -9,9 +9,6 @@ import { CountryService } from '../http/country.service';
 import { GamelevelService } from './gamelevel.service';
 import { RankingService } from './ranking.service';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class GamemanagerService {
 
   questionObject: Questionobject = new Questionobject();

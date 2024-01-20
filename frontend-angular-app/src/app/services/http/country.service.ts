@@ -217,10 +217,6 @@ const ELEMENT_DATA: Country[] = [
 // zentralafrika
 // zypern
 
-
-@Injectable({
-  providedIn: 'root'
-})
 export class CountryService {
 
   questionIndexHistory: number[];

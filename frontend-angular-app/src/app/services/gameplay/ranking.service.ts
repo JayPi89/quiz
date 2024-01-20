@@ -3,9 +3,6 @@ import { Rank } from 'src/app/models/rank';
 import { Counter } from 'src/app/models/counter';
 import { ReplaySubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class RankingService {
 
   ranks: Rank[] = [
