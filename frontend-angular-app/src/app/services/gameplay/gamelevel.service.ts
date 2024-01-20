@@ -1,9 +1,12 @@
-import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { gamemodes } from 'src/app/models/enums/gamemodes';
 import { questionmodes } from 'src/app/models/enums/questionmodes';
 import { GameSettings } from 'src/app/models/gamesettings';
+import { Injectable } from '@angular/core';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class GamelevelService {
 
   settingsSubnject = new ReplaySubject<GameSettings>(1);

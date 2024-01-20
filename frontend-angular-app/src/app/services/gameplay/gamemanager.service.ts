@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { Counter } from 'src/app/models/counter';
 import { questionmodes } from 'src/app/models/enums/questionmodes';
@@ -8,7 +7,11 @@ import { UserService } from '../auth/user.service';
 import { CountryService } from '../http/country.service';
 import { GamelevelService } from './gamelevel.service';
 import { RankingService } from './ranking.service';
+import { Injectable } from '@angular/core';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class GamemanagerService {
 
   questionObject: Questionobject = new Questionobject();

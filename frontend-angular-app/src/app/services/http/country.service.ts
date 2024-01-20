@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Country } from 'src/app/models/country';
 import { gamemodes } from 'src/app/models/enums/gamemodes';
 import { questionmodes } from 'src/app/models/enums/questionmodes';
 import { GameSettings } from 'src/app/models/gamesettings';
 import { Questionobject } from 'src/app/models/questionobject';
 import { GamelevelService } from '../gameplay/gamelevel.service';
+import { Injectable } from '@angular/core';
 
 // capitalLevel => 1 | 2 | 3
 const ELEMENT_DATA: Country[] = [
@@ -217,6 +216,9 @@ const ELEMENT_DATA: Country[] = [
 // zentralafrika
 // zypern
 
+@Injectable({
+  providedIn: 'root'
+})
 export class CountryService {
 
   questionIndexHistory: number[];
@@ -224,7 +226,7 @@ export class CountryService {
   
 
   constructor(private gameLevelService: GamelevelService) {
-    this.gameLevelService.getSettingsAsObserveable().subscribe(settings => this.mySettings = settings);
+    this.gameLevelService.getSettingsAsObserveable().subscribe((settings: GameSettings) => this.mySettings = settings);
     this.questionIndexHistory = [];
    }
 

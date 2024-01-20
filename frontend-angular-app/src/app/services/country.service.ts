@@ -5,6 +5,9 @@ import { Country } from '../models/country';
 
 const baseUrl = 'http://localhost:6868/api/countries';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class CountryService {
 
   /* ----------------- NOT IN USE ----------------- */
