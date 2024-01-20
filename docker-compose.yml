@@ -3,9 +3,9 @@ version: "3.8"
 services:
   angular-service:
       container_name: quizapp
-      build: ./quizapp # Location of our Dockerfile
+      build: ./frontend-angular-app # Location of our Dockerfile
       volumes: # Volume binding
-        - './docker-compose-spring-boot-mysql/.angular:/usr/src/app' 
+        - './.angular:/usr/src/app' 
       ports: 
         - '4200:4200' # Port mapping
       command: > 
@@ -24,7 +24,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    build: ./docker-compose-spring-boot-mysql/quiz-app
+    build: ./backend-data-service
     restart: on-failure
     env_file: ./.env
     ports:
