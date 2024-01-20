@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "quizapp": {
+    "frontendangularapp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/quizapp",
+            "outputPath": "dist/frontendangularapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "quizapp:build:production"
+              "browserTarget": "frontendangularapp:build:production"
             },
             "development": {
-              "browserTarget": "quizapp:build:development"
+              "browserTarget": "frontendangularapp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "quizapp:build"
+            "browserTarget": "frontendangularapp:build"
           }
         },
         "test": {
@@ -109,5 +109,7 @@
       }
     }
   },
-  "defaultProject": "quizapp"
+  "cli": {
+    "analytics": false
+  }
 }

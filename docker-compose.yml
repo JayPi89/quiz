@@ -2,8 +2,8 @@ version: "3.8"
 
 services:
   angular-service:
-      container_name: quizapp
-      build: ./frontend-angular-app # Location of our Dockerfile
+      container_name: frontendangularapp
+      build: ./frontendangularapp # Location of our Dockerfile
       volumes: # Volume binding
         - './.angular:/usr/src/app' 
       ports: 
