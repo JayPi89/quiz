@@ -1,7 +1,7 @@
 import { Country } from 'src/app/models/country';
 import { gamemodes } from 'src/app/models/enums/gamemodes';
 import { questionmodes } from 'src/app/models/enums/questionmodes';
-import { GameSettings } from 'src/app/models/gamesettings';
+import { GameSettings } from 'src/app/models/game-settings';
 import { Questionobject } from 'src/app/models/questionobject';
 import { GamelevelService } from '../gameplay/gamelevel.service';
 import { Injectable } from '@angular/core';

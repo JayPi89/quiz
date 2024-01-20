@@ -19,7 +19,7 @@ export class RankingPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.rankSubscription = this.rankingService.getRanksAsObs().subscribe(ranks => {this.ranks = ranks; ranks.sort((a, b) => (b.points - a.points))});
+    this.rankSubscription = this.rankingService.getRanksAsObs().subscribe((ranks: Rank[]) => {this.ranks = ranks; ranks.sort((a, b) => (b.points - a.points))});
   }
 
 }

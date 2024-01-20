@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { continents } from 'src/app/models/enums/continents';
 import { gamemodes } from 'src/app/models/enums/gamemodes';
 import { questionmodes } from 'src/app/models/enums/questionmodes';
-import { GameSettings } from 'src/app/models/gamesettings';
+import { GameSettings } from 'src/app/models/game-settings';
 import { GamelevelService } from 'src/app/services/gameplay/gamelevel.service';
 import { GamemanagerService } from 'src/app/services/gameplay/gamemanager.service';
 
@@ -44,15 +44,15 @@ export class QuizGameSettingsComponent implements OnInit {
 
   constructor(private _formBuilder: UntypedFormBuilder, private gameLevelService: GamelevelService, private gameManger: GamemanagerService) {
     this.mySettings = this.gameLevelService.getSettingsAsObserveable();
-    this.mySettings.subscribe(setting => {
+    this.mySettings.subscribe((setting: GameSettings) => {
       this.gameModeControl.setValue(setting.gameMode);
       this.gameLevelControl.setValue(setting.gameLevel);
       this.questionModeControl.setValue(setting.questionMode);
       this.answerInjectionControl.setValue(setting.answerInjection);
       this.roundsControl.setValue(setting.rounds);
     });
-    gameLevelService.isRoundStarted().subscribe(started => this.started = started);
-    gameLevelService.isRoundPaused().subscribe(paused => this.isPaused = paused);
+    gameLevelService.isRoundStarted().subscribe((started: boolean) => this.started = started);
+    gameLevelService.isRoundPaused().subscribe((paused: boolean) => this.isPaused = paused);
   }
 
   ngOnInit(): void {

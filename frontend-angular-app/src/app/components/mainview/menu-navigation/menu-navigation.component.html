@@ -1,10 +1,13 @@
 <div class="wrapper">
     <!-- top -->
     <div class="navigation-group">
+        <div class="navigation-item" routerLink="" routerLinkActive="active-list-item"><mat-icon>home</mat-icon><span *ngIf="isExpanded">Home</span></div>
         <div class="navigation-item" routerLink="quiz" routerLinkActive="active-list-item"><mat-icon>question_mark</mat-icon><span *ngIf="isExpanded">Quiz</span></div>
         <div class="navigation-item" routerLink="ranking" routerLinkActive="active-list-item"><mat-icon>leaderboard</mat-icon><span *ngIf="isExpanded">Ranking</span></div>
         <div class="navigation-item" routerLink="database" routerLinkActive="active-list-item"><mat-icon>storage</mat-icon><span *ngIf="isExpanded">Datenbank</span></div>
         <div class="navigation-item" routerLink="settings" routerLinkActive="active-list-item"><mat-icon>build</mat-icon><span *ngIf="isExpanded">Einstellungen</span></div>
+        <div class="divider"></div>
+        <div class="navigation-item" routerLink="database" routerLinkActive="active-list-item"><mat-icon>storage</mat-icon><span *ngIf="isExpanded">Datenbank</span></div>
     </div>
     <!-- bottom -->
     <div class="navigation-group">

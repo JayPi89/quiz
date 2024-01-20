@@ -3,24 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ErrorPageComponent } from './sites/error-page/error-page.component';
-import { LandingPageComponent } from './sites/landing-page/landing-page.component';
-import { QuestionPageComponent } from './sites/question-page/question-page.component';
+import { ErrorPageComponent } from './components/mainview/error-page/error-page.component';
+import { QuestionPageComponent } from './components/pages/quiz/question-page/question-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material-module';
 import { ToolbarComponent } from './components/mainview/toolbar/toolbar.component';
 import { SidePanelComponent } from './components/mainview/side-panel/side-panel.component';
 import { MenuNavigationComponent } from './components/mainview/menu-navigation/menu-navigation.component';
-import { QuizViewComponent } from './components/questionview/quiz-view/quiz-view.component';
-import { DatabasePageComponent } from './sites/database-page/database-page.component';
-import { SettingsPageComponent } from './sites/settings-page/settings-page.component';
-import { RankingPageComponent } from './sites/ranking-page/ranking-page.component';
+import { QuizViewComponent } from './components/pages/quiz/question-components/quiz-view/quiz-view.component';
+import { SettingsPageComponent } from './components/pages/quiz/settings-page/settings-page.component';
+import { RankingPageComponent } from './components/pages/quiz/ranking-page/ranking-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { QuizMenuComponent } from './components/questionview/quiz-menu/quiz-menu.component';
-import { QuizViewCountryComponent } from './components/questionview/quiz-view-country/quiz-view-country.component';
-import { QuizViewFlagComponent } from './components/questionview/quiz-view-flag/quiz-view-flag.component';
-import { QuizGameSettingsComponent } from './components/questionview/quiz-game-settings/quiz-game-settings.component';
+import { QuizMenuComponent } from './components/pages/quiz/question-components/quiz-menu/quiz-menu.component';
+import { QuizViewCountryComponent } from './components/pages/quiz/question-components/quiz-view-country/quiz-view-country.component';
+import { QuizViewFlagComponent } from './components/pages/quiz/question-components/quiz-view-flag/quiz-view-flag.component';
+import { QuizGameSettingsComponent } from './components/pages/quiz/settings-page/quiz-game-settings/quiz-game-settings.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { LandingPageComponent } from './components/pages/quiz/landing-page/landing-page.component';
+import { DatabasePageComponent } from './components/pages/quiz/database-page/database-page.component';
 
 @NgModule({
   declarations: [

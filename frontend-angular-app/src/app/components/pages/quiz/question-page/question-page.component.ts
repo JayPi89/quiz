@@ -3,7 +3,7 @@ import { interval, Observable, ReplaySubject, Subscription } from 'rxjs';
 import { addStyletoClass, colorizeStreak, removeStyleFromClass } from 'src/app/functions/quiz-style-helper';
 import { Counter } from 'src/app/models/counter';
 import { questionmodes } from 'src/app/models/enums/questionmodes';
-import { GameSettings } from 'src/app/models/gamesettings';
+import { GameSettings } from 'src/app/models/game-settings';
 import { Questionobject } from 'src/app/models/questionobject';
 import { GamelevelService } from 'src/app/services/gameplay/gamelevel.service';
 import { GamemanagerService } from 'src/app/services/gameplay/gamemanager.service';

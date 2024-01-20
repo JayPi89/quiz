@@ -1,7 +1,7 @@
 import { Observable, ReplaySubject } from 'rxjs';
 import { Counter } from 'src/app/models/counter';
 import { questionmodes } from 'src/app/models/enums/questionmodes';
-import { GameSettings } from 'src/app/models/gamesettings';
+import { GameSettings } from 'src/app/models/game-settings';
 import { Questionobject } from 'src/app/models/questionobject';
 import { UserService } from '../auth/user.service';
 import { CountryService } from '../http/country.service';
