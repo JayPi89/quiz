@@ -21,6 +21,8 @@ import { QuizGameSettingsComponent } from './components/pages/quiz/settings-page
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { LandingPageComponent } from './components/pages/quiz/landing-page/landing-page.component';
 import { DatabasePageComponent } from './components/pages/quiz/database-page/database-page.component';
+import { CommonModule } from '@angular/common';
+import { FinanceComponent } from './components/pages/market-watch/finance/finance.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +41,10 @@ import { DatabasePageComponent } from './components/pages/quiz/database-page/dat
     QuizViewCountryComponent,
     QuizViewFlagComponent,
     QuizGameSettingsComponent,
+    FinanceComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

@@ -6,6 +6,10 @@ import { RankingPageComponent } from './components/pages/quiz/ranking-page/ranki
 import { SettingsPageComponent } from './components/pages/quiz/settings-page/settings-page.component';
 import { LandingPageComponent } from './components/pages/quiz/landing-page/landing-page.component';
 import { DatabasePageComponent } from './components/pages/quiz/database-page/database-page.component';
+import { FinanceComponent } from './components/pages/market-watch/finance/finance.component';
+import { MarketStatusComponent } from './components/pages/market-watch/market-status/market-status.component';
+import { SentimentComponent } from './components/pages/market-watch/sentiment/sentiment.component';
+import { ShareDetailsComponent } from './components/pages/market-watch/share-details/share-details.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -13,6 +17,10 @@ const routes: Routes = [
   { path: 'ranking', component: RankingPageComponent },
   { path: 'database', component: DatabasePageComponent },
   { path: 'settings', component: SettingsPageComponent },
+
+  { path: 'share/details', component: ShareDetailsComponent },
+  { path: 'market-status', component: MarketStatusComponent },
+  { path: 'sentiment', component: SentimentComponent },
 
   { path: 'brands-ranking', component: SettingsPageComponent },
   { path: 'brands-database', component: SettingsPageComponent },
