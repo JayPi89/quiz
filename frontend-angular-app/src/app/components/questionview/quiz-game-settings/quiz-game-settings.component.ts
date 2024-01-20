@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl } from '@angular/forms';
+import { FormArray, UntypedFormBuilder, UntypedFormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { continents } from 'src/app/models/enums/continents';
 import { gamemodes } from 'src/app/models/enums/gamemodes';
@@ -15,12 +15,12 @@ import { GamemanagerService } from 'src/app/services/gameplay/gamemanager.servic
 })
 export class QuizGameSettingsComponent implements OnInit {
 
-  gameModeControl = new FormControl('');
-  gameLevelControl = new FormControl('');
-  questionModeControl = new FormControl('');
-  answerInjectionControl = new FormControl('');
-  continentsControl = new FormControl('');
-  roundsControl = new FormControl('');
+  gameModeControl = new UntypedFormControl('');
+  gameLevelControl = new UntypedFormControl('');
+  questionModeControl = new UntypedFormControl('');
+  answerInjectionControl = new UntypedFormControl('');
+  continentsControl = new UntypedFormControl('');
+  roundsControl = new UntypedFormControl('');
 
   mySettings: Observable<GameSettings>;
   questionmodes: typeof questionmodes = questionmodes;
@@ -42,7 +42,7 @@ export class QuizGameSettingsComponent implements OnInit {
     //continentsControl: this.continentsControl,
   });
 
-  constructor(private _formBuilder: FormBuilder, private gameLevelService: GamelevelService, private gameManger: GamemanagerService) {
+  constructor(private _formBuilder: UntypedFormBuilder, private gameLevelService: GamelevelService, private gameManger: GamemanagerService) {
     this.mySettings = this.gameLevelService.getSettingsAsObserveable();
     this.mySettings.subscribe(setting => {
       this.gameModeControl.setValue(setting.gameMode);
