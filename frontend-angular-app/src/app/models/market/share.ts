@@ -26,7 +26,7 @@ export interface Share {
     ticker: string,
     price: number,
     change_amount: number,
-    change_percentage: number,
+    change_percentage: string,
     volume: number,
 }
 

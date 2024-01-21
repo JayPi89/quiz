@@ -27,6 +27,7 @@ import { MarketStatusComponent } from './components/pages/market-watch/market-st
 import { ShareDetailsComponent } from './components/pages/market-watch/share-details/share-details.component';
 import { SentimentComponent } from './components/pages/market-watch/sentiment/sentiment.component';
 import { ShareCardComponent } from './components/pages/market-watch/shared-components/market-status/share-card.component';
+import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,7 @@ import { ShareCardComponent } from './components/pages/market-watch/shared-compo
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [HorizontalScrollDirective],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

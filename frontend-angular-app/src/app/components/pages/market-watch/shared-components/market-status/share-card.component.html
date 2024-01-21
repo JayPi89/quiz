@@ -1,6 +1,18 @@
 <div class="card">
-    <div>Ticker: {{ share.ticker }}</div>
-    <div>Price: ${{ share.price }}</div>
-    <div>Change: {{ share.change_amount }} ({{ share.change_percentage }})</div>
-    <div>Volume: {{ share.volume }}</div>
+    <div class="stock-symbol">{{ share.ticker }}</div>
+    <div class="stock-name">{{ getNameFromSymbol(share.ticker) }}</div>
+    <div class="item"><mat-icon>attach_money</mat-icon><span>{{ share.price }}</span></div>
+
+    <div class="item clickable" (click)="changeVOCurr()" *ngIf="isPercent" [ngClass]="{'positive': isPositive(share.change_amount), 'negative': !isPositive(share.change_amount) }">
+        <mat-icon *ngIf="!share.change_percentage.startsWith('-')">arrow_drop_up</mat-icon>
+        <mat-icon *ngIf="share.change_percentage.startsWith('-')">arrow_drop_down</mat-icon> 
+        <span>{{ share.change_percentage }}</span>
+    </div>
+    <div class="item clickable" (click)="changeVOCurr()" *ngIf="!isPercent" [ngClass]="{'positive': isPositive(share.change_amount), 'negative': !isPositive(share.change_amount) }">
+        <mat-icon *ngIf="!share.change_percentage.startsWith('-')">arrow_drop_up</mat-icon>
+        <mat-icon *ngIf="share.change_percentage.startsWith('-')">arrow_drop_down</mat-icon> 
+        <span>{{ share.change_amount | currency }}</span>
+    </div>
+
+    <div class="item"><mat-icon>bar_chart</mat-icon><span>{{ share.volume }}</span></div>
 </div>

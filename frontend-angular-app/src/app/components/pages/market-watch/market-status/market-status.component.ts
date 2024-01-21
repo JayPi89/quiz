@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { HorizontalScrollDirective } from 'src/app/directives/horizontal-scroll.directive';
 import { LoserAndWinner } from 'src/app/models/market/share';
 import { FinanceApiService } from 'src/app/services/finance-api.service';
 
 @Component({
   selector: 'app-market-status',
   templateUrl: './market-status.component.html',
-  styleUrl: './market-status.component.scss'
+  styleUrl: './market-status.component.scss',
 })
 export class MarketStatusComponent implements OnInit {
 
   loserAndWinner: LoserAndWinner;
+  isPercentage: boolean = true;
 
   constructor(private financeApiService: FinanceApiService) {}
-
-  myEvent(event: any) {
-    console.warn(event)
-  }
 
   ngOnInit(): void {
     this.loadData();

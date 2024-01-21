@@ -98,11 +98,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(168, 168, 168); 
+  background: rgb(128, 128, 128);
   border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(128, 128, 128); 
+  background: rgb(168, 168, 168); 
 }
