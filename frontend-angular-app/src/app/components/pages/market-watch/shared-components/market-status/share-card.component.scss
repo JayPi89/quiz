@@ -21,22 +21,25 @@
 
 .positive {
     color: rgb(167, 240, 130) !important;
-}
-.positive-secondary {
-    color: rgb(123, 177, 97) !important;
+    &:hover {
+        color: rgb(198, 236, 179) !important;
+    }
 }
 .negative {
     color: rgb(240, 147, 130) !important;
-}
-.negative-secondary {
-    color: rgb(184, 108, 100) !important;
+    &:hover {
+        color: rgb(236, 168, 156) !important;
+    }
 }
 
 .stock-symbol {
     font-size: 24px;
     margin-bottom: 5px;
     font-weight: bold;
-    color: rgb(237, 237, 237);
+    color: rgb(214, 214, 214);
+    &:hover {
+        color: rgb(251, 251, 251);
+    }
 }
 
 .stock-name {
@@ -53,6 +56,9 @@
     margin-bottom: 5px;
     font-weight: normal;
     color: rgb(185, 185, 185);
+    &:hover {
+        color: rgb(231, 231, 231);
+    }
 }
 
 .clickable:hover {

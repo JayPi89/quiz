@@ -1,6 +1,6 @@
 <div class="card">
-    <div class="stock-symbol">{{ share.ticker }}</div>
-    <div class="stock-name">{{ getNameFromSymbol(share.ticker) }}</div>
+    <div class="stock-symbol clickable" (click)="routTo(share.ticker)">{{ share.ticker }}</div>
+    <div class="stock-name clickable" (click)="routTo(share.ticker)">{{ getNameFromSymbol(share.ticker) }}</div>
     <div class="item"><mat-icon>attach_money</mat-icon><span>{{ share.price }}</span></div>
 
     <div class="item clickable" (click)="changeVOCurr()" *ngIf="isPercent" [ngClass]="{'positive': isPositive(share.change_amount), 'negative': !isPositive(share.change_amount) }">
