@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Country } from 'src/app/models/country';
+import { Country } from 'src/app/models/quiz/country';
 import { CountryService } from 'src/app/services/country.service';
 
 const ELEMENT_DATA: Country[] = [

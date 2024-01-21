@@ -1,4 +1,4 @@
-import { questionmodes } from "./enums/questionmodes";
+import { questionmodes } from "../enums/quiz/questionmodes";
 
 export class Questionobject {
     question: string;

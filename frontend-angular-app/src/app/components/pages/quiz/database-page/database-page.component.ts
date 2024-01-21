@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, MatSortable, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Country } from 'src/app/models/country';
+import { Country } from 'src/app/models/quiz/country';
 import { CountryService } from 'src/app/services/country.service';
 
 @Component({

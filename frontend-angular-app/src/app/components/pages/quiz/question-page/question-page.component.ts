@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Observable, ReplaySubject, Subscription } from 'rxjs';
 import { addStyletoClass, colorizeStreak, removeStyleFromClass } from 'src/app/functions/quiz-style-helper';
-import { Counter } from 'src/app/models/counter';
-import { questionmodes } from 'src/app/models/enums/questionmodes';
-import { GameSettings } from 'src/app/models/game-settings';
-import { Questionobject } from 'src/app/models/questionobject';
+import { Counter } from 'src/app/models/quiz/counter';
+import { questionmodes } from 'src/app/models/enums/quiz/questionmodes';
+import { GameSettings } from 'src/app/models/quiz/game-settings';
+import { Questionobject } from 'src/app/models/quiz/questionobject';
 import { GamelevelService } from 'src/app/services/gameplay/gamelevel.service';
 import { GamemanagerService } from 'src/app/services/gameplay/gamemanager.service';
 

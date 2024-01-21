@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Country } from '../models/country';
+import { Country } from '../models/quiz/country';
 
 const baseUrl = 'http://localhost:6868/api/countries';
 

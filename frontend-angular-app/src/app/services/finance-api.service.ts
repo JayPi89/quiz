@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FUNCTIONS } from '../models/enums/market/functions';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,8 @@ export class FinanceApiService {
   private REAL_GRP_URL: string = `${this.baseUrl}/query?function=REAL_GDP&interval=annual&apikey=${this.apikey}`;
   // company Overviewe
   private COMPANY_OVERVIEW_URL = `${this.baseUrl}/query?function=OVERVIEW&symbol=IBM&apikey=demo`;
+
+  //https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol=IBM&apikey=demo
   
 
   constructor(private http: HttpClient) {}
@@ -36,18 +39,8 @@ export class FinanceApiService {
     return this.http.get(url);
   }
 
-  getCompanyOverview(symbol: string): Observable<any> {
-    const url = `${this.baseUrl}/query?function=OVERVIEW&symbol=IBM&apikey=${this.apikey}`;
-    return this.http.get(url);
-  }
-
-  getCurrentStockPrice(symbol: string): Observable<any> {
-    const url = `${this.baseUrl}/stock/${symbol}/current`;
-    return this.http.get(url);
-  }
-
-  getHistoricalStockPrices(symbol: string): Observable<any> {
-    const url = `${this.baseUrl}/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${this.apikey}`;
+  getDataBySymbolAndFunction(symbol: string, functionEnum: FUNCTIONS): Observable<any> {
+    const url = `${this.baseUrl}/query?function=${functionEnum}&symbol=${symbol}&apikey=${this.apikey}`;
     return this.http.get(url);
   }
 }

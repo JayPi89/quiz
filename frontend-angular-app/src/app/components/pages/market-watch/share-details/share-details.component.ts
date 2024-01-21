@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StockData } from 'src/app/models/market/share';
+import { FUNCTIONS } from 'src/app/models/enums/market/functions';
+import { StockData } from 'src/app/models/market/stock-data';
 import { FinanceApiService } from 'src/app/services/finance-api.service';
 
 @Component({
@@ -27,7 +28,7 @@ export class ShareDetailsComponent implements OnInit {
   }
 
   public loadCompanyOverview(symbol: string): void {
-    this.financeApiService.getCompanyOverview(symbol).subscribe((result: StockData) => this.stockData = result)
+    this.financeApiService.getDataBySymbolAndFunction(symbol, FUNCTIONS.OVERVIEW).subscribe((result: StockData) => this.stockData = result)
   }
 
 }

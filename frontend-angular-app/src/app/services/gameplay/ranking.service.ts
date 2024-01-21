@@ -1,5 +1,5 @@
-import { Rank } from 'src/app/models/rank';
-import { Counter } from 'src/app/models/counter';
+import { Rank } from 'src/app/models/quiz/rank';
+import { Counter } from 'src/app/models/quiz/counter';
 import { ReplaySubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 

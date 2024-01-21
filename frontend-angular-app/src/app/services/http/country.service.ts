@@ -1,8 +1,8 @@
-import { Country } from 'src/app/models/country';
-import { gamemodes } from 'src/app/models/enums/gamemodes';
-import { questionmodes } from 'src/app/models/enums/questionmodes';
-import { GameSettings } from 'src/app/models/game-settings';
-import { Questionobject } from 'src/app/models/questionobject';
+import { Country } from 'src/app/models/quiz/country';
+import { gamemodes } from 'src/app/models/enums/quiz/gamemodes';
+import { questionmodes } from 'src/app/models/enums/quiz/questionmodes';
+import { GameSettings } from 'src/app/models/quiz/game-settings';
+import { Questionobject } from 'src/app/models/quiz/questionobject';
 import { GamelevelService } from '../gameplay/gamelevel.service';
 import { Injectable } from '@angular/core';
 

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, UntypedFormBuilder, UntypedFormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { continents } from 'src/app/models/enums/continents';
-import { gamemodes } from 'src/app/models/enums/gamemodes';
-import { questionmodes } from 'src/app/models/enums/questionmodes';
-import { GameSettings } from 'src/app/models/game-settings';
+import { continents } from 'src/app/models/enums/quiz/continents';
+import { gamemodes } from 'src/app/models/enums/quiz/gamemodes';
+import { questionmodes } from 'src/app/models/enums/quiz/questionmodes';
+import { GameSettings } from 'src/app/models/quiz/game-settings';
 import { GamelevelService } from 'src/app/services/gameplay/gamelevel.service';
 import { GamemanagerService } from 'src/app/services/gameplay/gamemanager.service';
 

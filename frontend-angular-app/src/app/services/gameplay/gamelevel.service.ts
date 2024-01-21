@@ -1,7 +1,7 @@
 import { Observable, ReplaySubject } from 'rxjs';
-import { gamemodes } from 'src/app/models/enums/gamemodes';
-import { questionmodes } from 'src/app/models/enums/questionmodes';
-import { GameSettings } from 'src/app/models/game-settings';
+import { gamemodes } from 'src/app/models/enums/quiz/gamemodes';
+import { questionmodes } from 'src/app/models/enums/quiz/questionmodes';
+import { GameSettings } from 'src/app/models/quiz/game-settings';
 import { Injectable } from '@angular/core';
 
 @Injectable({

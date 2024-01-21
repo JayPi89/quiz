@@ -1,0 +1,36 @@
+export interface Cashflow {
+    symbol: string,
+    annualReports: AnnualReports[]
+}
+
+interface AnnualReports {
+    fiscalDateEnding: Date,
+    reportedCurrency: string,
+    operatingCashflow: number,
+    paymentsForOperatingActivities: number,
+    proceedsFromOperatingActivities: string,
+    changeInOperatingLiabilities: number,
+    changeInOperatingAssets: number,
+    depreciationDepletionAndAmortization: number,
+    capitalExpenditures: number,
+    changeInReceivables: number,
+    changeInInventory: number,
+    profitLoss: number,
+    cashflowFromInvestment: number,
+    cashflowFromFinancing: number,
+    proceedsFromRepaymentsOfShortTermDebt: number,
+    paymentsForRepurchaseOfCommonStock: string,
+    paymentsForRepurchaseOfEquity: string,
+    paymentsForRepurchaseOfPreferredStock: string,
+    dividendPayout: number,
+    dividendPayoutCommonStock: number,
+    dividendPayoutPreferredStock: string,
+    proceedsFromIssuanceOfCommonStock: string,
+    proceedsFromIssuanceOfLongTermDebtAndCapitalSecuritiesNet: number,
+    proceedsFromIssuanceOfPreferredStock: string,
+    proceedsFromRepurchaseOfEquity: number,
+    proceedsFromSaleOfTreasuryStock: string,
+    changeInCashAndCashEquivalents: string,
+    changeInExchangeRate: string,
+    netIncome: number,
+}

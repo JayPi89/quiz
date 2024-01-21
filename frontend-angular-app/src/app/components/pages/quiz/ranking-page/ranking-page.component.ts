@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Rank } from 'src/app/models/rank';
+import { Rank } from 'src/app/models/quiz/rank';
 import { RankingService } from 'src/app/services/gameplay/ranking.service';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { addStyletoClass, colorizeStreak, removeStyleFromClass } from 'src/app/functions/quiz-style-helper';
-import { Questionobject } from 'src/app/models/questionobject';
+import { Questionobject } from 'src/app/models/quiz/questionobject';
 import { CountryService } from 'src/app/services/http/country.service';
 
 @Component({
