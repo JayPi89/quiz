@@ -1,8 +1,8 @@
 <div class="wrapper">
 <!-- dashboard.component.html -->
-<div class="stock-dashboard">
+<div class="stock-dashboard" *ngIf="stockData">
     <h2>{{ stockData.Name }} ({{ stockData.Symbol }})</h2>
-    <div *ngIf="stockData">
+    <div>
         <div class="column">
             <!-- Basic Information -->
             <div class="column">
@@ -34,135 +34,162 @@
 
             </div>
             <!-- Financial Information -->
-            <div class="column" style="margin-top: 20px;">
+            <div class="column" style="margin-top: 30px;">
                 <div class="title-section">Financial Information</div>
-                <div class="field">
-                    <div class="title-small">Market Cap</div>
-                    <div class="value-small">{{ stockData.MarketCapitalization }}</div>
+                <div class="row">
+                    <div class="field">
+                        <div class="title-small">Market Cap</div>
+                        <div class="value-small">{{ stockData.MarketCapitalization | billion:'1.0-0' }} Mrd.</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Price to Earnings Ratio (PE)</div>
+                        <div class="value-small">{{ stockData.PERatio }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Price to Sales Ratio</div>
+                        <div class="value-small">{{ stockData.PriceToSalesRatioTTM }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Dividend Yield</div>
+                        <div class="value-small">{{ stockData.DividendYield }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Address</div>
+                        <div class="value-small">{{ stockData.Address }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Analyst Target Price</div>
+                        <div class="value-small">{{ stockData.AnalystTargetPrice }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">AssetType</div>
+                        <div class="value-small">{{ stockData.AssetType }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Beta</div>
+                        <div class="value-small">{{ stockData.Beta }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Dividend BookValue</div>
+                        <div class="value-small">{{ stockData.BookValue }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">CIK</div>
+                        <div class="value-small">{{ stockData.CIK }}</div>
+                    </div>
                 </div>
-                <div class="field">
-                    <div class="title-small">Price to Earnings Ratio (PE)</div>
-                    <div class="value-small">{{ stockData.PERatio }}</div>
+                <div class="row">
+                    <div class="field">
+                        <div class="title-small">Dividend Currency</div>
+                        <div class="value-small">{{ stockData.Currency }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Diluted EPS TTM</div>
+                        <div class="value-small">{{ stockData.DilutedEPSTTM }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Dividend Date</div>
+                        <div class="value-small">{{ stockData.DividendDate }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Dividend Per Share</div>
+                        <div class="value-small">{{ stockData.DividendPerShare }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">EBITDA</div>
+                        <div class="value-small">{{ stockData.EBITDA | billion:'1.0-0' }} Mrd.</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">EV to EBITDA</div>
+                        <div class="value-small">{{ stockData.EVToEBITDA }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">EV to Revenue</div>
+                        <div class="value-small">{{ stockData.EVToRevenue }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Fiscal Year End</div>
+                        <div class="value-small">{{ stockData.FiscalYearEnd }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Forward PE</div>
+                        <div class="value-small">{{ stockData.ForwardPE }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Gross Profit TTM</div>
+                        <div class="value-small">{{ stockData.GrossProfitTTM | billion:'1.0-0' }} Mrd.</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Latest Quarter</div>
+                        <div class="value-small">{{ stockData.LatestQuarter }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Operating Margin TTM</div>
+                        <div class="value-small">{{ stockData.OperatingMarginTTM }}</div>
+                    </div>
                 </div>
-                <div class="field">
-                    <div class="title-small">Price to Sales Ratio</div>
-                    <div class="value-small">{{ stockData.PriceToSalesRatioTTM }}</div>
+                <div class="row">
+                    <div class="field">
+                        <div class="title-small">PE Ratio</div>
+                        <div class="value-small">{{ stockData.PERatio }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Price to Sales Ratio TTM</div>
+                        <div class="value-small">{{ stockData.PriceToBookRatio }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Price to Sales Ratio TTM</div>
+                        <div class="value-small">{{ stockData.PriceToSalesRatioTTM }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Profit Margin</div>
+                        <div class="value-small">{{ stockData.ProfitMargin }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Quarterly Earnings Growth YOY</div>
+                        <div class="value-small">{{ stockData.QuarterlyEarningsGrowthYOY }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Quarterly Revenue Growth YOY</div>
+                        <div class="value-small">{{ stockData.QuarterlyRevenueGrowthYOY }}</div>
+                    </div>
                 </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.DividendYield }}</div>
+                <div class="row">
+                    <div class="field">
+                        <div class="title-small">Return On Assets TTM</div>
+                        <div class="value-small">{{ stockData.ReturnOnAssetsTTM }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Return On Equity TTM</div>
+                        <div class="value-small">{{ stockData.ReturnOnEquityTTM }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Revenue PerShare TTM</div>
+                        <div class="value-small">{{ stockData.RevenuePerShareTTM }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Revenue TTM</div>
+                        <div class="value-small">{{ stockData.RevenueTTM | billion:'1.0-0' }} Mrd.</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Shares Outstanding</div>
+                        <div class="value-small">{{ stockData.SharesOutstanding }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Trailing PE</div>
+                        <div class="value-small">{{ stockData.TrailingPE }}</div>
+                    </div>
                 </div>
 
-                <div class="field">
-                    <div class="title-small">Address</div>
-                    <div class="value-small">{{ stockData.Address }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">AnalystTargetPrice</div>
-                    <div class="value-small">{{ stockData.AnalystTargetPrice }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">AssetType</div>
-                    <div class="value-small">{{ stockData.AssetType }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Beta</div>
-                    <div class="value-small">{{ stockData.Beta }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend BookValue</div>
-                    <div class="value-small">{{ stockData.BookValue }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">CIK</div>
-                    <div class="value-small">{{ stockData.CIK }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Currency</div>
-                    <div class="value-small">{{ stockData.Currency }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">DilutedEPSTTM</div>
-                    <div class="value-small">{{ stockData.DilutedEPSTTM }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.DividendDate }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.DividendPerShare }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">EBITDA</div>
-                    <div class="value-small">{{ stockData.EBITDA }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.EVToEBITDA }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.EVToRevenue }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.FiscalYearEnd }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.ForwardPE }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.GrossProfitTTM }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.LatestQuarter }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.OperatingMarginTTM }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.PERatio }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.PriceToBookRatio }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.PriceToSalesRatioTTM }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.ProfitMargin }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.QuarterlyEarningsGrowthYOY }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.QuarterlyRevenueGrowthYOY }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.ReturnOnAssetsTTM }}</div>
-                </div>
-                <div class="field">
-                    <div class="title-small">Dividend Yield</div>
-                    <div class="value-small">{{ stockData.DividendYield }}</div>
-                </div>
+
             </div>
             <!-- Company Details -->
-            <div class="column" style="width: 100%;">
+            <div class="column" style="margin-top: 30px;">
                 <div class="title-section">Company Details</div>
-                <div class="title-small">Description</div>
-                <div>{{ stockData.Description }}</div>
+                <div class="field">
+                    <div class="title-small">Description</div>
+                    <div>{{ stockData.Description }}</div>
+                </div>
             </div>
         </div>
     </div>

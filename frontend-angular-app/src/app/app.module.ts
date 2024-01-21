@@ -21,13 +21,14 @@ import { QuizGameSettingsComponent } from './components/pages/quiz/settings-page
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { LandingPageComponent } from './components/pages/quiz/landing-page/landing-page.component';
 import { DatabasePageComponent } from './components/pages/quiz/database-page/database-page.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { FinanceComponent } from './components/pages/market-watch/finance/finance.component';
 import { MarketStatusComponent } from './components/pages/market-watch/market-status/market-status.component';
 import { ShareDetailsComponent } from './components/pages/market-watch/share-details/share-details.component';
 import { SentimentComponent } from './components/pages/market-watch/sentiment/sentiment.component';
 import { ShareCardComponent } from './components/pages/market-watch/shared-components/market-status/share-card.component';
 import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
+import { BillionPipe, MillionPipe } from './directives/million.pipe';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,8 @@ import { HorizontalScrollDirective } from './directives/horizontal-scroll.direct
     ShareDetailsComponent,
     SentimentComponent,
     ShareCardComponent,
+    MillionPipe,
+    BillionPipe,
   ],
   imports: [
     CommonModule,
@@ -62,7 +65,7 @@ import { HorizontalScrollDirective } from './directives/horizontal-scroll.direct
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [HorizontalScrollDirective],
+  providers: [HorizontalScrollDirective, DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
