@@ -1,15 +1,15 @@
 version: "3.8"
 
 services:
-  angular-service:
-      container_name: frontendangularapp
-      build: ./frontend-angular-app # Location of our Dockerfile
-      volumes: # Volume binding
-        - './.angular:/usr/src/app/project' 
-      ports: 
-        - '4200:4200' # Port mapping
-      command: > 
-        bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
+  # angular-service:
+  #     container_name: frontendangularapp
+  #     build: ./frontend-angular-app # Location of our Dockerfile
+  #     volumes: # Volume binding
+  #       - './.angular:/usr/src/app/project' 
+  #     ports: 
+  #       - '4200:4200' # Port mapping
+  #     command: > 
+  #       bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
   mysqldb:
     image: mysql:5.7
     restart: unless-stopped

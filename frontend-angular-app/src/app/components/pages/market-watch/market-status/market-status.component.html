@@ -1,3 +1,20 @@
 <div class="wrapper">
-    ...
+    <div *ngIf="loserAndWinner">
+        <div>Metadaten: {{ loserAndWinner.metadata }}</div>
+        <div>Letztes Update: {{ loserAndWinner.last_updated }}</div>
+        <div class="column">
+            <div class="title-1">Winner</div>
+            <div class="row scrollable">
+                <share-card [share]="winner" *ngFor="let winner of loserAndWinner.top_gainers"></share-card>
+            </div>
+            <div class="title-1">Loser</div>
+            <div class="row scrollable">
+                <share-card [share]="loser" *ngFor="let loser of loserAndWinner.top_losers"></share-card>
+            </div>
+            <div class="title-1">Most Traded</div>
+            <div class="row scrollable" (mousewheel)="myEvent($event)">
+                <share-card [share]="mostActive" *ngFor="let mostActive of loserAndWinner.most_actively_traded"></share-card>
+            </div>
+        </div>
+    </div>
 </div>

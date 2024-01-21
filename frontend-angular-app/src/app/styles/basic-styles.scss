@@ -1,0 +1,37 @@
+@import "color-variables.scss";
+
+.basic-color-theme-wrapper {
+    padding: 40px;
+    height: calc(100vh - 64px);
+    background-color: rgb(110, 110, 110);
+
+    color: rgb(200, 200, 200);
+
+    .content {
+        padding: 20px;
+        background-color: rgb(110, 110, 110);
+        color: rgb(200, 200, 200);
+    }
+
+
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}

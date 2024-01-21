@@ -23,6 +23,10 @@ import { LandingPageComponent } from './components/pages/quiz/landing-page/landi
 import { DatabasePageComponent } from './components/pages/quiz/database-page/database-page.component';
 import { CommonModule } from '@angular/common';
 import { FinanceComponent } from './components/pages/market-watch/finance/finance.component';
+import { MarketStatusComponent } from './components/pages/market-watch/market-status/market-status.component';
+import { ShareDetailsComponent } from './components/pages/market-watch/share-details/share-details.component';
+import { SentimentComponent } from './components/pages/market-watch/sentiment/sentiment.component';
+import { ShareCardComponent } from './components/pages/market-watch/shared-components/market-status/share-card.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,10 @@ import { FinanceComponent } from './components/pages/market-watch/finance/financ
     QuizViewFlagComponent,
     QuizGameSettingsComponent,
     FinanceComponent,
+    MarketStatusComponent,
+    ShareDetailsComponent,
+    SentimentComponent,
+    ShareCardComponent,
   ],
   imports: [
     CommonModule,
