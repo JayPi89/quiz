@@ -1,25 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FUNCTIONS } from '../models/enums/market/functions';
+import { API_KEY, AV_BASIC_URL, FUNCTIONS, INTERVAL } from '../models/enums/market/functions';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FinanceApiService {
-  private baseUrl = 'https://www.alphavantage.co';
-  private apikey = 'demo'; //F9ED3D6RW1UFG0LN
-
-  // Top losers and winners
-  private MARKET_STATUS_URL: string = `${this.baseUrl}/query?function=MARKET_STATUS&apikey=${this.apikey}`;
-  // Top losers and winners
-  private LOSER_WINNER_URL: string = `${this.baseUrl}/query?function=TOP_GAINERS_LOSERS&apikey=${this.apikey}`;
-  // real gdp data
-  private REAL_GRP_URL: string = `${this.baseUrl}/query?function=REAL_GDP&interval=annual&apikey=${this.apikey}`;
-  // company Overviewe
-  private COMPANY_OVERVIEW_URL = `${this.baseUrl}/query?function=OVERVIEW&symbol=IBM&apikey=demo`;
-
-  //https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol=IBM&apikey=demo
+  private MARKET_STATUS_URL = `${AV_BASIC_URL.BASIC}/query?function=${FUNCTIONS.MARKET_STATUS}&apikey=${API_KEY.DEMO}`
+  private LOSER_WINNER_URL = `${AV_BASIC_URL.BASIC}/query?function=${FUNCTIONS.TOP_GAINERS_LOSERS}&apikey=${API_KEY.DEMO}`
+  private REAL_GRP_URL = `${AV_BASIC_URL.BASIC}/query?function=${FUNCTIONS.REAL_GDP}&interval=${INTERVAL.ANNUAL}&apikey=${API_KEY.DEMO}`
   
 
   constructor(private http: HttpClient) {}
@@ -39,9 +29,28 @@ export class FinanceApiService {
     return this.http.get(url);
   }
 
-  getDataBySymbolAndFunction(symbol: string, functionEnum: FUNCTIONS): Observable<any> {
-    const url = `${this.baseUrl}/query?function=${functionEnum}&symbol=${symbol}&apikey=${this.apikey}`;
+  getCompanyInformation(symbol: string, functionCall: FUNCTIONS): Observable<any> {
+    const url = `${AV_BASIC_URL.BASIC}/query?function=${functionCall}&symbol=${symbol}&apikey=${API_KEY.DEMO}`;
+    return this.http.get(url);
+  }
+
+  getCompanyIncomeStatement(symbol: string): Observable<any> {
+    const url = `${AV_BASIC_URL.BASIC}/query?function=${FUNCTIONS.INCOME_STATEMENT}&symbol=${symbol}&apikey=${API_KEY.DEMO}`;
+    return this.http.get(url);
+  }
+
+  getCompanyStockData(symbol: string): Observable<any> {
+    const url = `${AV_BASIC_URL.BASIC}/query?function=${FUNCTIONS.TIME_SERIES_INTRADAY}&symbol=${symbol}&apikey=${API_KEY.DEMO}`;
+    return this.http.get(url);
+  }
+
+  getCompanyOverview(symbol: string): Observable<any> {
+    const url = `${AV_BASIC_URL.BASIC}/query?function=${FUNCTIONS.OVERVIEW}&symbol=${symbol}&apikey=${API_KEY.DEMO}`;
+    return this.http.get(url);
+  }
+
+  getCompanyGlobalQuote(symbol: string): Observable<any> {
+    const url = `${AV_BASIC_URL.BASIC}/query?function=${FUNCTIONS.GLOBAL_QUOTE}&symbol=${symbol}&apikey=${API_KEY.DEMO}`;
     return this.http.get(url);
   }
 }
-

@@ -2,12 +2,288 @@
 <!-- dashboard.component.html -->
 <div class="stock-dashboard" *ngIf="stockData">
     <h2>{{ stockData.Name }} ({{ stockData.Symbol }})</h2>
+    <div class="field">
+        <div class="title-small">Description</div>
+        <div>{{ stockData.Description }}</div>
+    </div>
     <div>
         <div class="column">
-            <!-- Basic Information -->
-            <div class="column">
-                <div class="title-section">Basic Information</div>
+            <!-- Global Quote -->
+            <div class="column" style="margin-top: 30px;">
+                <div class="title-section">Quote</div>
                 <div class="row">
+                    <div class="field">
+                        <div class="title-small">Last Trade</div>
+                        <div class="value-small">{{ globalQuote['Global Quote']['07. latest trading day'] | date: 'dd.MM.yyyy' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Price</div>
+                        <div class="value-small">{{ globalQuote['Global Quote']['05. price'] | number : '1.2-2' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Volume</div>
+                        <div class="value-small">{{ globalQuote['Global Quote']['06. volume'] | short : '1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Change (abs)</div>
+                        <div class="value-small">{{ globalQuote['Global Quote']['09. change'] | number : '1.2-2' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Change</div>
+                        <div class="value-small">{{ globalQuote['Global Quote']['10. change percent'] }}</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Global Quote -->
+            <div class="column" style="margin-top: 30px;">
+                <div class="title-section">Balance Sheet</div>
+                <div class="row container">
+                    <div class="field">
+                        <div class="title-small">Accumulated Depreciation Amortization PPE</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].accumulatedDepreciationAmortizationPPE | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Capital Lease Obligations</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].capitalLeaseObligations| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Cash And Cash Equivalents At Carrying Value</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].cashAndCashEquivalentsAtCarryingValue| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Cash And Short Term Investments</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].cashAndShortTermInvestments| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Common Stock</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].commonStock| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Common Stock Shares Outstanding</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].commonStockSharesOutstanding| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Current Accounts Payable</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].currentAccountsPayable| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Current Debt</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].currentDebt| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">currentLongTermDebt</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].currentLongTermDebt| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">currentNetReceivables</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].currentNetReceivables| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">deferredRevenue</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].deferredRevenue| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">fiscalDateEnding</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].fiscalDateEnding| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">goodwill</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].goodwill| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">intangibleAssets</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].intangibleAssets| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">intangibleAssetsExcludingGoodwill</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].intangibleAssetsExcludingGoodwill| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">inventory</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].inventory| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">investments</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].investments| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">longTermDebt</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].longTermDebt| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">longTermDebtNoncurrent</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].longTermDebtNoncurrent| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">longTermInvestments</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].longTermInvestments| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">otherCurrentAssets</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].otherCurrentAssets| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">otherNonCurrentAssets</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].otherNonCurrentAssets| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">propertyPlantEquipment</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].propertyPlantEquipment| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">reportedCurrency</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].reportedCurrency| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">retainedEarnings</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].retainedEarnings| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">shortLongTermDebtTotal</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].shortLongTermDebtTotal| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">shortTermInvestments</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].shortTermInvestments| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">totalAssets</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].totalAssets| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">totalCurrentAssets</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].totalCurrentAssets| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Total Current Liabilities</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].totalCurrentLiabilities| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Total Non Current Assets</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].totalNonCurrentAssets| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Total Non Current Liabilities</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].totalNonCurrentLiabilities| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Total Shareholder Equity</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].totalShareholderEquity| short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Treasury Stock</div>
+                        <div class="value-small">{{ balanceSheet.annualReports[0].treasuryStock| short:'1.0-0' }}</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Income Statement -->
+            <div class="column" style="margin-top: 30px;">
+                <div class="title-section">Income Statement</div>
+                <div class="row container">
+                    <div class="field">
+                        <div class="title-small">Total Revenue</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].totalRevenue | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Cost Of Revenue</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].costOfRevenue | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Cost of Goods and Services Sold</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].costofGoodsAndServicesSold | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Depreciation</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].depreciation | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Depreciation and Amortization</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].depreciationAndAmortization | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">EBIT</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].ebit | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">EBITDA</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].ebitda | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Gross Profit</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].grossProfit | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">Income Before Tax</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].incomeBeforeTax | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">IncomeTaxExpense</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].incomeTaxExpense | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">InterestAndDebtExpense</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].interestAndDebtExpense | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">InterestExpense</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].interestExpense | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">InterestIncome</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].interestIncome | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">InvestmentIncomeNet</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].investmentIncomeNet | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">NetIncome</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].netIncome | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">NetIncomeFromContinuingOperations</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].netIncomeFromContinuingOperations | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">NetInterestIncome</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].netInterestIncome | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">NonInterestIncome</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].nonInterestIncome | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">OperatingExpenses</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].operatingExpenses | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">OperatingIncome</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].operatingIncome | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">OtherNonOperatingIncome</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].otherNonOperatingIncome | short:'1.0-0' }}</div>          
+                    </div>
+                    <div class="field">
+                        <div class="title-small">ReportedCurrency</div> 
+                        <div class="value-small">{{ incomeStatements.annualReports[0].reportedCurrency | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">ResearchAndDevelopment</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].researchAndDevelopment | short:'1.0-0' }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="title-small">sellingGeneralAndAdministrative</div>
+                        <div class="value-small">{{ incomeStatements.annualReports[0].sellingGeneralAndAdministrative | short:'1.0-0' }}</div>
+                    </div>
+                    
+                </div>
+            </div>
+                        
+            <!-- Basic Information -->
+            <div class="column" style="margin-top: 30px;">
+                <div class="title-section">Basic Information</div>
+                <div class="row container">
                     <div class="field">
                         <div class="title-small">Asset Type</div>
                         <div class="value-small">{{ stockData.AssetType }}</div>
@@ -20,8 +296,6 @@
                         <div class="title-small">Exchange</div>
                         <div class="value-small">{{ stockData.Exchange }}</div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="field">
                         <div class="title-small">Sector</div>
                         <div class="value-small">{{ stockData.Sector }}</div>
@@ -36,10 +310,10 @@
             <!-- Financial Information -->
             <div class="column" style="margin-top: 30px;">
                 <div class="title-section">Financial Information</div>
-                <div class="row">
+                <div class="row container">
                     <div class="field">
                         <div class="title-small">Market Cap</div>
-                        <div class="value-small">{{ stockData.MarketCapitalization | billion:'1.0-0' }} Mrd.</div>
+                        <div class="value-small">{{ stockData.MarketCapitalization | short:'1.0-0' }}</div>
                     </div>
                     <div class="field">
                         <div class="title-small">Price to Earnings Ratio (PE)</div>
@@ -77,8 +351,6 @@
                         <div class="title-small">CIK</div>
                         <div class="value-small">{{ stockData.CIK }}</div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="field">
                         <div class="title-small">Dividend Currency</div>
                         <div class="value-small">{{ stockData.Currency }}</div>
@@ -97,7 +369,7 @@
                     </div>
                     <div class="field">
                         <div class="title-small">EBITDA</div>
-                        <div class="value-small">{{ stockData.EBITDA | billion:'1.0-0' }} Mrd.</div>
+                        <div class="value-small">{{ stockData.EBITDA | short:'1.0-0' }}</div>
                     </div>
                     <div class="field">
                         <div class="title-small">EV to EBITDA</div>
@@ -117,7 +389,7 @@
                     </div>
                     <div class="field">
                         <div class="title-small">Gross Profit TTM</div>
-                        <div class="value-small">{{ stockData.GrossProfitTTM | billion:'1.0-0' }} Mrd.</div>
+                        <div class="value-small">{{ stockData.GrossProfitTTM | short:'1.0-0' }}</div>
                     </div>
                     <div class="field">
                         <div class="title-small">Latest Quarter</div>
@@ -127,8 +399,6 @@
                         <div class="title-small">Operating Margin TTM</div>
                         <div class="value-small">{{ stockData.OperatingMarginTTM }}</div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="field">
                         <div class="title-small">PE Ratio</div>
                         <div class="value-small">{{ stockData.PERatio }}</div>
@@ -153,8 +423,6 @@
                         <div class="title-small">Quarterly Revenue Growth YOY</div>
                         <div class="value-small">{{ stockData.QuarterlyRevenueGrowthYOY }}</div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="field">
                         <div class="title-small">Return On Assets TTM</div>
                         <div class="value-small">{{ stockData.ReturnOnAssetsTTM }}</div>
@@ -169,7 +437,7 @@
                     </div>
                     <div class="field">
                         <div class="title-small">Revenue TTM</div>
-                        <div class="value-small">{{ stockData.RevenueTTM | billion:'1.0-0' }} Mrd.</div>
+                        <div class="value-small">{{ stockData.RevenueTTM | short:'1.0-0' }}</div>
                     </div>
                     <div class="field">
                         <div class="title-small">Shares Outstanding</div>
@@ -179,16 +447,6 @@
                         <div class="title-small">Trailing PE</div>
                         <div class="value-small">{{ stockData.TrailingPE }}</div>
                     </div>
-                </div>
-
-
-            </div>
-            <!-- Company Details -->
-            <div class="column" style="margin-top: 30px;">
-                <div class="title-section">Company Details</div>
-                <div class="field">
-                    <div class="title-small">Description</div>
-                    <div>{{ stockData.Description }}</div>
                 </div>
             </div>
         </div>

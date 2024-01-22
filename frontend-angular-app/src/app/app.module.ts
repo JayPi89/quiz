@@ -28,7 +28,7 @@ import { ShareDetailsComponent } from './components/pages/market-watch/share-det
 import { SentimentComponent } from './components/pages/market-watch/sentiment/sentiment.component';
 import { ShareCardComponent } from './components/pages/market-watch/shared-components/market-status/share-card.component';
 import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
-import { BillionPipe, MillionPipe } from './directives/million.pipe';
+import { BillionPipe, MillionPipe, ShortPipe } from './directives/million.pipe';
 
 @NgModule({
   declarations: [
@@ -54,6 +54,7 @@ import { BillionPipe, MillionPipe } from './directives/million.pipe';
     ShareCardComponent,
     MillionPipe,
     BillionPipe,
+    ShortPipe
   ],
   imports: [
     CommonModule,

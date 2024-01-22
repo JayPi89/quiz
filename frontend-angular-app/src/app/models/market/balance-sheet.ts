@@ -1,4 +1,4 @@
-export interface Cashflow {
+export interface BalanceSheet {
     symbol: string,
     annualReports: AnnualReports[]
 }
