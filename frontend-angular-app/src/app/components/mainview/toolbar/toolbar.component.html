@@ -4,11 +4,21 @@
     </button> -->
     <img src="assets/logo.png" width="65px" height="32px"/>
     <span style="margin-left: 15px;">Quizzls</span>
+    <form>
+      <input type="text"
+              style="margin-left: 30px; width: 300px;"
+              placeholder="Search for a street"
+              [formControl]="control"
+              [matAutocomplete]="auto"
+              [style.fontSize]="17"
+              class="example-input">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWith">
+        @for (symbol of filteredSymbols | async; track symbol) {
+          <mat-option [value]="symbol"><strong>{{symbol.symbol}}</strong> {{symbol.name}}</mat-option>
+        }
+      </mat-autocomplete>
+    </form>
     <span class="spacer"></span>
-    <mat-form-field *ngIf="!isLoggedIn" class="formfield">
-      <mat-label>username</mat-label>
-      <input matInput [(ngModel)]="name">
-    </mat-form-field>
     <button *ngIf="!isLoggedIn" (click)="loginUser(name)" mat-flat-button>
       Anmelden
     </button>

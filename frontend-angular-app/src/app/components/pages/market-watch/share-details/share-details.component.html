@@ -9,7 +9,7 @@
     <div>
         <div class="column">
             <!-- Global Quote -->
-            <div class="column" style="margin-top: 30px;">
+            <div class="column" style="margin-top: 30px;" *ngIf="globalQuote">
                 <div class="title-section">Quote</div>
                 <div class="row">
                     <div class="field">
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <!-- Global Quote -->
-            <div class="column" style="margin-top: 30px;">
+            <div class="column" style="margin-top: 30px;" *ngIf="balanceSheet">
                 <div class="title-section">Balance Sheet</div>
                 <div class="row container">
                     <div class="field">
@@ -177,7 +177,7 @@
                 </div>
             </div>
             <!-- Income Statement -->
-            <div class="column" style="margin-top: 30px;">
+            <div class="column" style="margin-top: 30px;" *ngIf="incomeStatements">
                 <div class="title-section">Income Statement</div>
                 <div class="row container">
                     <div class="field">
