@@ -29,6 +29,9 @@ import { SentimentComponent } from './components/pages/market-watch/sentiment/se
 import { ShareCardComponent } from './components/pages/market-watch/shared-components/market-status/share-card.component';
 import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
 import { BillionPipe, MillionPipe, ShortPipe } from './directives/million.pipe';
+import { NgChartsModule } from 'ng2-charts';
+import { MyLineChartComponent } from './components/pages/market-watch/shared-components/my-line-chart/my-line-chart.component';
+import { MyDoughnutChartComponent } from './components/pages/market-watch/shared-components/my-doughnut-chart/my-doughnut-chart.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,9 @@ import { BillionPipe, MillionPipe, ShortPipe } from './directives/million.pipe';
     ShareCardComponent,
     MillionPipe,
     BillionPipe,
-    ShortPipe
+    ShortPipe,
+    MyLineChartComponent,
+    MyDoughnutChartComponent
   ],
   imports: [
     CommonModule,
@@ -65,6 +70,7 @@ import { BillionPipe, MillionPipe, ShortPipe } from './directives/million.pipe';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgChartsModule,
   ],
   providers: [HorizontalScrollDirective, DecimalPipe],
   bootstrap: [AppComponent]

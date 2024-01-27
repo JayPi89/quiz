@@ -10,6 +10,7 @@ import { FinanceComponent } from './components/pages/market-watch/finance/financ
 import { MarketStatusComponent } from './components/pages/market-watch/market-status/market-status.component';
 import { SentimentComponent } from './components/pages/market-watch/sentiment/sentiment.component';
 import { ShareDetailsComponent } from './components/pages/market-watch/share-details/share-details.component';
+import { DashboardComponent } from './components/pages/market-watch/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'share/details', component: ShareDetailsComponent },
   { path: 'market-status', component: MarketStatusComponent },
   { path: 'sentiment', component: SentimentComponent },
+  { path: 'dashboard', component: DashboardComponent },
 
   { path: 'brands-ranking', component: SettingsPageComponent },
   { path: 'brands-database', component: SettingsPageComponent },
