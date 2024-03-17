@@ -1,0 +1,15 @@
+.mat-mdc-table {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+
+
+.mat-mdc-row:hover .mat-mdc-cell {
+    background-color: rgb(139, 162, 172);
+    cursor: pointer;
+  }
+  
+.demo-row-is-clicked {
+    background-color: rgb(125, 156, 169);
+}

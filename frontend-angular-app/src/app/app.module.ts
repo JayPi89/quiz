@@ -28,9 +28,11 @@ import { ShareDetailsComponent } from './components/pages/market-watch/share-det
 import { SentimentComponent } from './components/pages/market-watch/sentiment/sentiment.component';
 import { ShareCardComponent } from './components/pages/market-watch/shared-components/market-status/share-card.component';
 import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
-import { BillionPipe, MillionPipe, ShortPipe } from './directives/million.pipe';
-import { NgChartsModule } from 'ng2-charts';
-import { MyLineChartComponent } from './components/pages/market-watch/shared-components/my-line-chart/my-line-chart.component';
+import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
+import { ShortPipe } from './directives/million.pipe';
+import { MyLineChartModule } from './components/pages/market-watch/shared-components/my-line-chart/my-line-chart.module';
+import { DashboardComponent } from './components/pages/market-watch/dashboard/dashboard.component';
+import { MyPortfolioListComponent } from './components/pages/market-watch/shared-components/my-portfolio-list/my-portfolio-list.component';
 import { MyDoughnutChartComponent } from './components/pages/market-watch/shared-components/my-doughnut-chart/my-doughnut-chart.component';
 
 @NgModule({
@@ -55,11 +57,10 @@ import { MyDoughnutChartComponent } from './components/pages/market-watch/shared
     ShareDetailsComponent,
     SentimentComponent,
     ShareCardComponent,
-    MillionPipe,
-    BillionPipe,
     ShortPipe,
-    MyLineChartComponent,
-    MyDoughnutChartComponent
+    DashboardComponent,
+    MyPortfolioListComponent,
+    MyDoughnutChartComponent,
   ],
   imports: [
     CommonModule,
@@ -71,8 +72,9 @@ import { MyDoughnutChartComponent } from './components/pages/market-watch/shared
     FormsModule,
     ReactiveFormsModule,
     NgChartsModule,
+    MyLineChartModule,
   ],
-  providers: [HorizontalScrollDirective, DecimalPipe],
+  providers: [HorizontalScrollDirective, DecimalPipe, { provide: NgChartsConfiguration, useValue: { generateColors: false }}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

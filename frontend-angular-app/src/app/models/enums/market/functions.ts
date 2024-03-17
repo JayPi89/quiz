@@ -28,5 +28,5 @@ export enum AV_BASIC_URL {
 
 export enum API_KEY {
     DEMO = 'demo',
-    PROD = 'F9ED3D6RW1UFG0LN'
+    PROD = 'XXXXXXXXXXXXX'
 }

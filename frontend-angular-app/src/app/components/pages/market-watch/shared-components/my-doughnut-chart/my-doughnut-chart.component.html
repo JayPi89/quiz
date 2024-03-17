@@ -1,5 +1,11 @@
-<canvas baseChart
+<canvas
+  baseChart
+  class="chart"
   [data]="doughnutChartData"
-  [labels]="doughnutChartLabels"
-  [type]="doughnutChartType">
+  [options]="doughnutChartOptions"
+  [type]="doughnutChartType"
+>
 </canvas>
+<div class="donut-inner">
+  <span class="title-small">{{ portfolio.cash | number : '1.2-2' }} €</span>
+</div>

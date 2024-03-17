@@ -1,0 +1,39 @@
+<table mat-table [dataSource]="myStocks" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    <!-- Position Column -->
+    <ng-container matColumnDef="logo" style="width: 70px;">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element"><img src={{element.url}} height="17px"/> </td>
+      </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="assetType">
+        <th mat-header-cell *matHeaderCellDef> Typ </th>
+        <td mat-cell *matCellDef="let element"> {{element.assetType}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="exchange">
+        <th mat-header-cell *matHeaderCellDef> Börse </th>
+        <td mat-cell *matCellDef="let element"> {{element.exchange}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row 
+        (click)="clickOnRow(row)"
+        [class.demo-row-is-clicked]="clickedRow === row" 
+        *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

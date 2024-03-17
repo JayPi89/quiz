@@ -1,3 +1,22 @@
 <div class="wrapper">
-    <my-doughnut-chart></my-doughnut-chart>
+    <div class="row">
+        <div class="column card">
+            <div class="title-small mb20">Portfolio</div>
+            <my-doughnut-chart [portfolio]="portfolio" class="doughnut-chart"></my-doughnut-chart>
+        </div>
+        <div class="column card" style="width: 230px;">
+            <div class="title-small">Akt. Wert</div>
+            <div class="value-small">{{ portfolio.cash | number : '1.2-2' }}</div>
+            <mat-divider></mat-divider>
+            <div class="title-small">Allokation</div>
+            <div class="value-small">Allokation</div>
+        </div>
+        <div class="column card" style="width: 830px;">
+            <div class="title-small mb20">Performance</div>
+            <my-line-chart [portfolio]="portfolio" class="line-chart"></my-line-chart>
+        </div>
+    </div>
+    <div class="row card" style="width: 100%px; max-height: 500px;">
+        <app-my-portfolio-list [portfolio]="portfolio"></app-my-portfolio-list>
+    </div>
 </div>
